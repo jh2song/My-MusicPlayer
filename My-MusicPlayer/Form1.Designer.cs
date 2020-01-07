@@ -28,13 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.playlist = new System.Windows.Forms.ListBox();
+            this.SuspendLayout();
+            // 
+            // playlist
+            // 
+            this.playlist.Dock = System.Windows.Forms.DockStyle.Right;
+            this.playlist.FormattingEnabled = true;
+            this.playlist.ItemHeight = 12;
+            this.playlist.Location = new System.Drawing.Point(557, 0);
+            this.playlist.Name = "playlist";
+            this.playlist.Size = new System.Drawing.Size(161, 500);
+            this.playlist.TabIndex = 0;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.BackColor = System.Drawing.Color.SeaGreen;
+            this.ClientSize = new System.Drawing.Size(718, 500);
+            this.Controls.Add(this.playlist);
+            this.Name = "Form1";
+            this.Text = "JH2MusicPlayer";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox playlist;
     }
 }
 
