@@ -46,6 +46,7 @@
             // 
             // playlist
             // 
+            this.playlist.AllowDrop = true;
             this.playlist.Dock = System.Windows.Forms.DockStyle.Right;
             this.playlist.FormattingEnabled = true;
             this.playlist.ItemHeight = 12;
@@ -53,6 +54,8 @@
             this.playlist.Name = "playlist";
             this.playlist.Size = new System.Drawing.Size(161, 500);
             this.playlist.TabIndex = 0;
+            this.playlist.DragDrop += new System.Windows.Forms.DragEventHandler(this.playlist_DragDrop);
+            this.playlist.DragEnter += new System.Windows.Forms.DragEventHandler(this.playlist_DragEnter);
             // 
             // pictureBox1
             // 
