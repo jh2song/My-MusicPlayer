@@ -24,9 +24,15 @@ namespace My_MusicPlayer
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private static class playlistClass
         {
-            
+            public static List<string> songFilePath = new List<string>();
+            public static int songNum = 0;
+            public static void Add(string s)
+            {
+                songFilePath.Add(s);
+                songNum++;
+            }
         }
 
         private void playlist_DragEnter(object sender, DragEventArgs e)
@@ -40,10 +46,17 @@ namespace My_MusicPlayer
         private void playlist_DragDrop(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.Copy;
-            string[] s = (string[])e.Data.GetData(DataFormats.FileDrop, false);
-            int i;
-            for (i = 0; i < s.Length; i++)
-                playlist.Items.Add(Path.GetFileName(s[i]));
+            string[] tmp = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            
+            
+            for (int i = 0; i < tmp.Length; i++)
+                playlistClass.Add(tmp[i]);
+
+            playlist.Items.Clear();
+
+            for (int i = 0; i < playlistClass.songNum; i++)
+                playlist.Items.Add(Path.GetFileName(playlistClass.songFilePath[i]));
+                
         }
     }
 }
