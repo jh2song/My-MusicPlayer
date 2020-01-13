@@ -56,6 +56,7 @@
             this.playlist.TabIndex = 0;
             this.playlist.DragDrop += new System.Windows.Forms.DragEventHandler(this.playlist_DragDrop);
             this.playlist.DragEnter += new System.Windows.Forms.DragEventHandler(this.playlist_DragEnter);
+            this.playlist.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.playlist_MouseDoubleClick);
             // 
             // pictureBox1
             // 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Windows.Media;
 
 namespace My_MusicPlayer
 {
@@ -35,6 +36,11 @@ namespace My_MusicPlayer
             }
         }
 
+        private static class playing
+        {
+            static public MediaPlayer mMediaPlayer = new MediaPlayer();
+        }
+
         private void playlist_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
@@ -47,8 +53,8 @@ namespace My_MusicPlayer
         {
             e.Effect = DragDropEffects.Copy;
             string[] tmp = (string[])e.Data.GetData(DataFormats.FileDrop, false);
-            
-            
+
+
             for (int i = 0; i < tmp.Length; i++)
                 playlistClass.Add(tmp[i]);
 
@@ -56,7 +62,18 @@ namespace My_MusicPlayer
 
             for (int i = 0; i < playlistClass.songNum; i++)
                 playlist.Items.Add(Path.GetFileName(playlistClass.songFilePath[i]));
-                
+
         }
-    }
+
+        // 재생 해야 됨
+        private void playlist_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int index = this.playlist.IndexFromPoint(e.Location);
+
+            // 재생할 파일 : playlistClass.songFilePath[index]
+
+            playing.mMediaPlayer.Open(new Uri(playlistClass.songFilePath[index], UriKind.Absolute));
+            playing.mMediaPlayer.Play();
+        }
+}
 }
