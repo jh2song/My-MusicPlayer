@@ -1,0 +1,8 @@
+C:\Users\MASTER\Desktop\project\2020\My-MusicPlayer\My-MusicPlayer\bin\Release\My-MusicPlayer.exe.config
+C:\Users\MASTER\Desktop\project\2020\My-MusicPlayer\My-MusicPlayer\bin\Release\My-MusicPlayer.exe
+C:\Users\MASTER\Desktop\project\2020\My-MusicPlayer\My-MusicPlayer\bin\Release\My-MusicPlayer.pdb
+C:\Users\MASTER\Desktop\project\2020\My-MusicPlayer\My-MusicPlayer\obj\Release\My_MusicPlayer.Form1.resources
+C:\Users\MASTER\Desktop\project\2020\My-MusicPlayer\My-MusicPlayer\obj\Release\My_MusicPlayer.Properties.Resources.resources
+C:\Users\MASTER\Desktop\project\2020\My-MusicPlayer\My-MusicPlayer\obj\Release\My-MusicPlayer.csproj.GenerateResource.cache
+C:\Users\MASTER\Desktop\project\2020\My-MusicPlayer\My-MusicPlayer\obj\Release\My-MusicPlayer.exe
+C:\Users\MASTER\Desktop\project\2020\My-MusicPlayer\My-MusicPlayer\obj\Release\My-MusicPlayer.pdb

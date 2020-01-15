@@ -1,9 +1,0 @@
-C:\Users\MASTER\Desktop\project\2020\My-MusicPlayer\My-MusicPlayer\bin\Debug\My-MusicPlayer.exe.config
-C:\Users\MASTER\Desktop\project\2020\My-MusicPlayer\My-MusicPlayer\bin\Debug\My-MusicPlayer.exe
-C:\Users\MASTER\Desktop\project\2020\My-MusicPlayer\My-MusicPlayer\bin\Debug\My-MusicPlayer.pdb
-C:\Users\MASTER\Desktop\project\2020\My-MusicPlayer\My-MusicPlayer\obj\Debug\My-MusicPlayer.csprojAssemblyReference.cache
-C:\Users\MASTER\Desktop\project\2020\My-MusicPlayer\My-MusicPlayer\obj\Debug\My_MusicPlayer.Form1.resources
-C:\Users\MASTER\Desktop\project\2020\My-MusicPlayer\My-MusicPlayer\obj\Debug\My_MusicPlayer.Properties.Resources.resources
-C:\Users\MASTER\Desktop\project\2020\My-MusicPlayer\My-MusicPlayer\obj\Debug\My-MusicPlayer.csproj.GenerateResource.cache
-C:\Users\MASTER\Desktop\project\2020\My-MusicPlayer\My-MusicPlayer\obj\Debug\My-MusicPlayer.exe
-C:\Users\MASTER\Desktop\project\2020\My-MusicPlayer\My-MusicPlayer\obj\Debug\My-MusicPlayer.pdb

@@ -18,11 +18,11 @@ namespace My_MusicPlayer
         {
             InitializeComponent();
             albumCover.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            toLeft.SizeMode = PictureBoxSizeMode.StretchImage;
+            play.SizeMode = PictureBoxSizeMode.StretchImage;
+            pause.SizeMode = PictureBoxSizeMode.StretchImage;
+            stop.SizeMode = PictureBoxSizeMode.StretchImage;
+            toRight.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private static class playlistClass
@@ -39,6 +39,7 @@ namespace My_MusicPlayer
         private static class playing
         {
             static public MediaPlayer mMediaPlayer = new MediaPlayer();
+            static public int playingIndex = 0;
         }
 
         private void playlist_DragEnter(object sender, DragEventArgs e)
@@ -68,12 +69,49 @@ namespace My_MusicPlayer
         // 재생 해야 됨
         private void playlist_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            int index = this.playlist.IndexFromPoint(e.Location);
-
+            playing.playingIndex = this.playlist.IndexFromPoint(e.Location);
             // 재생할 파일 : playlistClass.songFilePath[index]
 
-            playing.mMediaPlayer.Open(new Uri(playlistClass.songFilePath[index], UriKind.Absolute));
+            playing.mMediaPlayer.Open(new Uri(playlistClass.songFilePath[playing.
+                playingIndex], UriKind.Absolute));
             playing.mMediaPlayer.Play();
         }
-}
+
+        private void toLeft_Click(object sender, EventArgs e)
+        {
+            --playing.playingIndex;
+            if (playing.playingIndex < 0)
+                playing.playingIndex += playlist.Items.Count;
+
+            playing.mMediaPlayer.Open(new Uri(playlistClass.songFilePath[playing.
+                playingIndex], UriKind.Absolute));
+            playing.mMediaPlayer.Play();
+        }
+
+        private void toRight_Click(object sender, EventArgs e)
+        {
+            ++playing.playingIndex;
+            if (playing.playingIndex >= playlist.Items.Count)
+                playing.playingIndex -= playlist.Items.Count;
+
+            playing.mMediaPlayer.Open(new Uri(playlistClass.songFilePath[playing.
+                playingIndex], UriKind.Absolute));
+            playing.mMediaPlayer.Play();
+        }
+
+        private void play_Click(object sender, EventArgs e)
+        {
+            playing.mMediaPlayer.Play();
+        }
+
+        private void pause_Click(object sender, EventArgs e)
+        {
+            playing.mMediaPlayer.Pause();
+        }
+
+        private void stop_Click(object sender, EventArgs e)
+        {
+            playing.mMediaPlayer.Stop();
+        }
+    }
 }
